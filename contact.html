@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rivra Corporation — Contact Us</title>
+  <meta name="description" content="Contact Rivra Corporation — get in touch with our team for enterprise solutions, support, and partnerships." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,0 100,25 100,75 50,100 0,75 0,25' fill='%230A0A0C' stroke='%23C9A84C' stroke-width='6'/><text y='.9em' font-size='60' x='50%' text-anchor='middle' fill='%23C9A84C' font-family='serif' font-weight='bold'>R</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- EmailJS — replace with your actual Public Key -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your public key
+    // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+    (function() {
+      if (typeof emailjs !== 'undefined') {
+        emailjs.init({ publicKey: 'YOUR_PUBLIC_KEY' });
+      }
+    })();
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="cursor-outer"></div>
+  <div id="cursor-inner"></div>
+  <canvas id="three-canvas"></canvas>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="Rivra logo cropped.jpeg" width="200" height="70">
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="download.html">Download</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="download.html" class="nav-cta">Download</a>
+    </nav>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="download.html">Download</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="page-content">
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <div class="section-label reveal">Get In Touch</div>
+        <h1 class="reveal reveal-delay-1"><em>Contact</em><br>Our Team</h1>
+      </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="contact-grid">
+
+          <!-- LEFT: Info -->
+          <div class="reveal">
+            <h3>Let's Build<br>Something <em style="font-style:italic;color:var(--gold);">Together</em></h3>
+            <div class="gold-line" style="margin: 18px 0 24px;"></div>
+            <p>Whether you're exploring Rivra for your enterprise, need technical support, or want to discuss a partnership — our team is here and ready. We typically respond within 24 hours.</p>
+
+            <div class="contact-detail reveal reveal-delay-1">
+              <div class="icon">&#9993;</div>
+              <div class="text">
+                <strong>Email</strong>
+                <span>corporationrivra@gmail.com</span>
+              </div>
+            </div>
+            </div>
+            </div>
+            <div class="contact-detail reveal reveal-delay-4">
+              <div class="icon">&#9680;</div>
+              <div class="text">
+                <strong>Support Hours</strong>
+                <span>24 / 7 — 365 days a year</span>
+              </div>
+            </div>
+
+            
+          <!-- RIGHT: Form -->
+          <div class="contact-form-wrap reveal reveal-delay-1">
+            <div class="section-label" style="margin-bottom:8px;">Send a Message</div>
+            <h3 style="font-family:var(--font-display); font-size:1.6rem; margin-bottom:28px;">We'd Love to <em style="font-style:italic;color:var(--gold);">Hear</em> From You</h3>
+
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" placeholder="Alexandra Chen" />
+                  <div class="form-error" id="err-name">Please enter your full name.</div>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="alex@company.com" />
+                  <div class="form-error" id="err-email">Please enter a valid email address.</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Enterprise Solution Inquiry" />
+                <div class="form-error" id="err-subject">Please enter a subject.</div>
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company (Optional)</label>
+                <input type="text" id="company" name="company" placeholder="Your Organization" />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your project, challenge, or question. The more detail, the better we can help." rows="6"></textarea>
+                <div class="form-error" id="err-message">Please write a message.</div>
+              </div>
+
+              <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center; padding:16px;">
+                Send Message &rarr;
+              </button>
+
+              <div id="form-success" class="form-success">
+                &#10003; &nbsp; Your message has been sent successfully! We'll be in touch within 24 hours.
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" style="background:var(--bg2);">
+      <div class="section-inner">
+        <div class="section-label reveal">FAQ</div>
+        <h2 class="section-title reveal reveal-delay-1">Common <em>Questions</em></h2>
+        <div class="gold-line reveal reveal-delay-1"></div>
+        <div style="max-width:720px; margin-top:48px;">
+          <div class="faq-item gold-card reveal reveal-delay-1" style="margin-bottom:16px; padding:28px 32px; cursor:pointer;" onclick="toggleFaq(this)">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:16px;">
+              <span style="font-family:var(--font-display); font-size:1.15rem;">How quickly can we get onboarded?</span>
+              <span class="faq-icon" style="color:var(--gold); font-size:1.2rem; min-width:20px; text-align:center;">&#43;</span>
+            </div>
+            <p class="faq-body" style="display:none; color:var(--gray); font-size:0.92rem; line-height:1.8; margin-top:16px; padding-top:16px; border-top:1px solid var(--border);">
+              Most enterprise clients are fully onboarded within 2–4 weeks. Our dedicated implementation team handles data migration, integration, and team training to ensure a smooth transition.
+            </p>
+          </div>
+          <div class="faq-item gold-card reveal reveal-delay-2" style="margin-bottom:16px; padding:28px 32px; cursor:pointer;" onclick="toggleFaq(this)">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:16px;">
+              <span style="font-family:var(--font-display); font-size:1.15rem;">Is Rivra available for small businesses?</span>
+              <span class="faq-icon" style="color:var(--gold); font-size:1.2rem; min-width:20px; text-align:center;">&#43;</span>
+            </div>
+            <p class="faq-body" style="display:none; color:var(--gray); font-size:0.92rem; line-height:1.8; margin-top:16px; padding-top:16px; border-top:1px solid var(--border);">
+              Yes — while we specialize in enterprise, Rivra Platform offers a scalable SMB tier. Contact us to discuss pricing and feature sets appropriate for your organization's size.
+            </p>
+          </div>
+          </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="Rivra logo cropped.jpeg" width="200" height="70">
+          </a>
+          <p>Delivering precision-engineered technology solutions that power the enterprises of tomorrow.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <a href="index.html">Home</a>
+          <a href="download.html">Download</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">Our Story</a>
+          <a href="about.html">Leadership</a>
+          <a href="contact.html">Careers</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:corporationrivra@gmail.com">corporationrivra@gmail.com</a>
+          <a href="contact.html">Send Message</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Rivra Corporation. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="#" title="LinkedIn">in</a>
+          <a href="#" title="Twitter">X</a>
+          <a href="#" title="GitHub">GH</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(el) {
+      const body = el.querySelector('.faq-body');
+      const icon = el.querySelector('.faq-icon');
+      const isOpen = body.style.display === 'block';
+      body.style.display = isOpen ? 'none' : 'block';
+      icon.innerHTML = isOpen ? '&#43;' : '&#8722;';
+    }
+  </script>
+</body>
+</html>
